@@ -1,0 +1,64 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    let table = $('tbody')
+    $('button').click(() => {
+        $.ajax({
+            url: '2.data.json',
+            success: data => {
+                /*
+                let arr = $.map(data.fruits, (v, k) => v)
+                console.log(arr)
+                const element = arr.map((val) =>
+                    `${val.fruitName}, ${val.price}, ${val.harvestDate}, ${val.origin}`)
+                console.log(element)
+
+                let[a, b] = element
+                console.log(a)
+                console.log(b)
+
+                apple = a.split(', ')
+                console.log(apple)
+
+                strawberry = b.split(', ')
+                console.log(strawberry)
+
+                $('tbody tr').find('td').eq(0).append(apple[0]).end()
+                                        .eq(1).append(apple[1]).end()
+                                        .eq(2).append(apple[2]).end()
+                                        .eq(3).append(apple[3])
+
+                $('tbody tr').find('td').eq(4).append(strawberry[0]).end()
+                                        .eq(5).append(strawberry[1]).end()
+                                        .eq(6).append(strawberry[2]).end()
+                                        .eq(7).append(strawberry[3])
+                */
+                let fruits = data.fruits
+                let fruit, col, val, tr, td
+
+                for(let row in fruits) {
+                    fruit = fruits[row]
+                    tr = table.find('tr').eq(row)
+
+                    col = 0
+                    for(let key in fruit) {
+                        val = fruit[key]
+                        td = tr.find('td').eq(col++)
+                        td.text(val)
+                    }
+                }
+            }
+        })
+    })
+})
+</script>
+<button type='button'>load</button>
+<table>
+    <thead>
+        <tr><th>이름</th><th>가격</th><th>기한</th><th>산지</th></tr>
+    </thead>
+    <tbody>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+</table>

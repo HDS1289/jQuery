@@ -1,0 +1,13 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    for(let i = 0; i < 10; i++) {
+        $(`<li>item${i}</li>`).appendTo('ul')
+    }
+
+    $('ul').find('li').eq(3).html("item3, I'm not alone.").end()
+    .eq(4).html("item4, I'm alone.").end()
+    .eq(5).html("item5, Where are you going?")
+})
+</script>
+<ul></ul>

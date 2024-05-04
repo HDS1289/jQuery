@@ -1,0 +1,24 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    $('button').click(() => {
+        if($(':text').val() && $(':password').val()) $('form').submit()
+        else {
+            $('button').attr('type', 'button')
+            if($(':text').val()) 
+                $('span').eq(1).text('비밀번호를 입력하세요.').css('color', 'red').show().fadeOut(3000)
+            else if($(':password').val()) 
+                $('span').eq(0).text('아이디를 입력하세요.').css('color', 'red').show().fadeOut(3000)
+            else {
+                $('span').eq(1).text('비밀번호를 입력하세요.').css('color', 'red').show().fadeOut(3000)
+                $('span').eq(0).text('아이디를 입력하세요.').css('color', 'red').show().fadeOut(3000)
+            }
+        }
+    })
+})
+</script>
+<form>
+    <label>ID: <input type='text' name='id'/></label><span></span><br>
+    <label>PW: <input type='password' name='pw'/></label><span></span><br>
+    <button type='submit'>로그인</button>
+</form>

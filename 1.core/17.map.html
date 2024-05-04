@@ -1,0 +1,26 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    let ids = $('li').map((i, e) => e.id)
+    console.log(ids)
+
+    idStr = ids.toArray().join('')
+    console.log(idStr)
+
+    console.log(ids.get())//parameter 없이 get을 call하면 html element를 원소로 하는 array가 return된다.
+
+    ids = $.map(ids.get(), (e, i) => e + 1) //jQuery static ==> javascript 객체에 대하여 조작할 수 있다.
+    console.log(ids)                        //ids.get()으로 return된 새로운 array를 인덱스 넘버까지 표시하는 것으로 가공한다.
+
+    let arr = $.map({
+        userName: 'adelia',
+        age: 20
+    }, (v, k) => v) //이 객체를 value만 담는 collection으로 가공해줘.
+    console.log(arr)
+})
+</script>
+<ul>
+    <li id='a'>A</li>
+    <li id='b'>B</li>
+    <li id='c'>C</li>
+</ul>

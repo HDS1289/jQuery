@@ -1,0 +1,10 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    for(let i = 0; i < 10; i++) {
+        $(`<tr><td>item${i}</td><td>no${i}</td></tr>`)
+        .appendTo('table')
+    }
+})
+</script>
+<table></table>

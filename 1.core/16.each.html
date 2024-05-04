@@ -1,0 +1,26 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => { 
+    $('li').each((i, e) => console.log(i, e)) //ul이 아니라 li각각에 대하여 iterating을 하는 것이다.
+
+    $('li').each((i, e) => console.log(typeof e)) //반복추출하여 꺼낸 e가 HTML element인지, jQuery object인지를 확인한다.
+
+    $('li').each((i, e) => console.log($(e).text())) //반복추출하여 text를 읽어낸다.
+    //console.log($('li').text())
+
+    $('li').each((i, e) => console.log(i, e.id))
+
+    $('li').each((i, e) => console.log(i, $(e).attr('id')))
+
+    jQuery.each([1, 2, 3, 4], (i, e) => console.log(`[${i}]: `, e))
+
+    $.each($('li').toArray(), (i, e) => console.log(i, e)) //.toArray() Html element를 가진 array를 return 한다.
+
+    $.each({userName: 'ooo', age20}, (k, v) => console.log(k, v))
+})
+</script>
+<ul>
+    <li id='a'>A</li>
+    <li id='b'>B</li>
+    <li id='c'>C</li>
+</ul>

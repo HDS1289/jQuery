@@ -1,0 +1,17 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    let $div1 = $('div') //jQuery function을 통과하고 나면 $div1 object에 할당되어진다.
+    let $div2 = $div1.eq(0) //jQuery object의 return type인 collection에서 0번째 index값을 찾는다.
+    let div3 = $div1.get(0) //HTML Element에서의 인덱스값을 찾는다.
+    console.log($div1, $div2, div3)
+    console.log(typeof $div1, typeof $div2, typeof div3)
+
+    let $div11 = $('div')
+    let $div22 = $div11.eq(0) //소스 하나를 바탕으로 호출될 때마다 새로운 객체를 만들어낸다. jQuery, eq function
+    let div33 = $div11.get(0) //소스 하나를 그대로 타겟으로 하고 있다.
+    console.log($div1 == $div11, $div2 == $div22, div3 == div33)
+
+})
+</script>
+<div></div>

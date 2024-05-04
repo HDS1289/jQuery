@@ -1,0 +1,22 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    $('span').data('name', 'abcd')
+    $('span').data('type', 'G-type')
+
+    $('span').data('pet', {
+        petName: ['지구', '젤리'],
+        petType: 'parrot'
+    })
+    obj = $.map($('span').data(), (v, k) => v)
+
+    arr = $.map(obj[2], (v, k) => v)
+
+    arr.splice(arr.indexOf('parrot'), 1)
+
+    console.log(arr.join(' '))
+
+    console.log($('span').data('pet'))
+})
+</script>
+<span></span>

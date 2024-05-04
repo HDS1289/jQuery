@@ -1,0 +1,17 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    $('button').click('abel', e => { //첫 번째 parameter로 넣어준 'abel'이라는 string data는 이벤트 객체에 writing된다.
+        let userName = $(':text').val() //key는 data, value는 'abel'인 entry가 저장이 된다.
+        if(userName == e.data) {
+            $('span').text(` valid: ${e.data}`).show().fadeOut(3000)
+        } else {
+            $('span').text(` invalid: ${userName}`).show()
+        }
+    })
+})
+</script>
+<form>
+    <input type='text' name='userName' placeholder='사용자명'/><span></span><br>
+    <button type='button'>submit</button>
+</form>

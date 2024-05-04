@@ -1,0 +1,24 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+   //$('div').appendTo('hr')
+   //$('div').appendTo($('hr'))
+   $('hr').append($('div'))
+})
+</script>
+<style>
+    div {
+        background-color: orange;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 2.5rem;
+    }
+
+    hr {
+        border: .1rem solid;
+    }
+</style>
+<div></div>
+<div></div>
+<hr>
+<hr>

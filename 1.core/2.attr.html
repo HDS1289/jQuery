@@ -1,0 +1,18 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    console.log($('a').attr('href')) //0번째 인덱스 값만 읽어서 출력한다.(.attr(), .html())
+
+    $('a').attr('href', 'https://www.daum.net') //첫 번째 parameter로 바꾸고자 하는 attribute name을 설정한다.
+                                                //두 번째 parameter로 바꾸고자 하는 attribute value를 넣는다.
+    $('a').attr({
+        href: 'https://jquery.com',
+        target: '_blank'
+    })
+
+    $('a').removeAttr('target')
+})
+</script>
+
+<a href='http://www.google.com'>google</a>
+<a href='https://www.naver.com'>naver</a>

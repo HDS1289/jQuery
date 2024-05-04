@@ -1,0 +1,22 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    for(let i = 0; i < 8; i++) {
+        $('table').find('td').eq(`${i}`).html('aaa')
+    }
+
+    $('table').find('td').eq(2).html('aaa: rere').end()
+                .eq(4).html('aaa: jerk').end()
+                .eq(5).html('aaa: water')
+})
+</script>
+<table>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+</table>

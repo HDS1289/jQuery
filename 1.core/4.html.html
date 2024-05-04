@@ -1,0 +1,31 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    console.log($('h1').html())
+    $('footer').html('<mark>AAA</mark>')
+
+    console.log($('footer').html())
+
+    console.log($('header').find('h1').eq(1).html())
+
+    $('header').find('h1').eq(1).html('<hr>')
+
+    $('ul').find('li').eq(2).html('index: 2').end()//eq의 주어 collection을 return한다.
+                .eq(3).html('index: 3').end()
+                .eq(4).html('index: 4')
+    $('header').find('h1').text('<mark>Hi</mark>')
+    console.log($('h1').text()) //지정한 모든 tag의 data를 읽어낸다. <=> .html, .attr
+})
+</script>
+<header>
+    <h1><b>Hello</b></h1>
+    <h1>World</h1>
+</header>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<footer></footer>

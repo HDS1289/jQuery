@@ -1,0 +1,14 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+    let msg = 'foo 가 '
+$(() => {
+    /*
+    if($('div.foo').length) msg += '있다.'
+    else msg += '없다.'
+    */
+    //jQuery에서 return 되는 type은 collection이다.
+    $('div.foo').length ? msg += '있다.' : msg += '없다.'
+    console.log(msg)
+})
+</script>
+<div class='foo1'></div>

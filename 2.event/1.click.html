@@ -1,0 +1,11 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+let cnt = 0
+$('button').eq(0).click(() => $(`<li>item${cnt++}</li>`).appendTo('ul')) //새로운 list항목을 ul 객체에다 추가하여라.
+$('button').eq(1).click(() => $('ul').empty()) //ul에 있는 모든 항목들을 없애라(empty).
+})
+</script>
+<button type='button'>click</button>
+<button type='button'>click</button>
+<ul></ul>

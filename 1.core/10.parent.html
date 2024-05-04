@@ -1,0 +1,20 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    console.log($('.4').parent()) //직계 종속을 찾아서 return한다.
+    console.log($('.4').parents())//html 이하의 모든 부모 객체들을 지정한다.
+    console.log($('.4').parentsUntil('.1')) //특정 클래스 미만의 부모 객체들을 지정한다.
+    console.log($('.4').closest('div')) //기준 이상에서 가장 가까운 것을 지정한다.
+})
+</script>
+<pre>
+    <div class='1'>
+        <div class='2-1'>
+            <div class='3'>
+                <div class='4'></div>  <!--div.4 인 tag가 기준점이 된다.-->
+            </div>
+        </div>
+        <div class='2-2'></div>
+        <div class='2-3'></div>
+    </div>
+</pre>

@@ -1,0 +1,48 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    let txt = $(':text')
+    console.log(txt)
+    console.log('|' + txt.val() + '|')
+
+    txt.val(' world ')
+
+    txt.val(txt.val().trim()) //txt의 value를 trim 하고 그 value를 txt에 저장한 것이다.
+
+    txt.val((i, v) => `hello ${v}`) //callback에서 return된 data가 txt.val()에 할당된다. (write)
+
+    /*
+    for(let i = 0; i < 3; i++) {
+        console.log($(':checked').eq(`${i}`).val())
+    }
+    */
+    //$(:'checked').each((i, v) => console.log(v.value))
+    $(':checked').each((i, v) => console.log($(v).val()))
+
+    $('input').val(['noon', 'sea', 'banana']) //value값을 바꾸도록 하는 설정이다. (writing)
+
+    $('#fruit').val('banana')
+
+    $('#green').val(['cucumber', 'carrot'])
+})
+</script>
+<form>
+    <input type='text' value=' hello '/><br>
+
+    <input type='checkbox' value='night' checked/>밤
+    <input type='checkbox' value='noon'/>낮<br>
+
+    <input type='radio' value='mountain' checked/>산
+    <input type='radio' value='sea'/>바다<br>
+
+    <select id='fruit'>
+        <option>apple</option>
+        <option>banana</option>
+    </select>
+
+    <select id='green' multiple>
+        <option>cucumber</option>
+        <option>cabbage</option>
+        <option>carrot</option>
+    </select>
+</form>

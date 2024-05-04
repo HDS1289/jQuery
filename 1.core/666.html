@@ -1,0 +1,22 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    //$('input').val($('input').val().split('-').join(''))
+    /*
+    let phoneNum = $('input').val()
+    let refinedNum = ''
+    for(let char of phoneNum) {
+        if(char <= '9' && char >= '0')
+            refinedNum += char
+    }
+
+    $('input').val(refinedNum)
+    */
+    let phNum = $('input').val()
+    let phRefine = phNum.split('').filter(e => e >= 0 && e <= 9).join('')
+    $('input').val(phRefine)
+})
+</script>
+<form>
+    <input type='text' value='010-1234-5678'/>
+</form>
